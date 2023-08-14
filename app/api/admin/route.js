@@ -2,7 +2,8 @@ import { createClient } from "@supabase/supabase-js";
 
 const supabase = createClient(
   "https://pquqecfuohkgeipmcgkt.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBxdXFlY2Z1b2hrZ2VpcG1jZ2t0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODU5NTA2MDIsImV4cCI6MjAwMTUyNjYwMn0.aJWq2-mK9HvwRoE9b07XN7GqaNb1f66ICQH0Wv7iT-c"
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBxdXFlY2Z1b2hrZ2VpcG1jZ2t0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODU5NTA2MDIsImV4cCI6MjAwMTUyNjYwMn0.aJWq2-mK9HvwRoE9b07XN7GqaNb1f66ICQH0Wv7iT-c",
+  { auth: { persistSession: false } }
 );
 //  const supabase = createClient(
 //    process.env.SUPABASE_URL,
@@ -32,10 +33,10 @@ export const POST = async (req, res) => {
       console.log(error.message);
       console.log("----------------2");
     }
-
+    
+    
     return new Response(JSON.stringify(data), {
       status: 201,
     });
   } catch (error) {}
- 
 };

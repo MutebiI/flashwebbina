@@ -1,7 +1,9 @@
 import React from "react";
-import myImage from "../images/ibra.JPG";
+// import myImage from "../images/ibra.JPG";
 
 const AboutUs = () => {
+  const vercelImage =
+    "https://media.istockphoto.com/id/1187065202/photo/computer-hacker-breaking-the-codes.jpg?s=612x612&w=0&k=20&c=y8gMrMMpBJ0uniFZKrAMjxEajwHkPyaHbpre44aQETo=";
   return (
     <div>
       <div className="bg-gray-100 py-12">
@@ -12,7 +14,7 @@ const AboutUs = () => {
           <div className="flex flex-col md:flex-row ">
             <div className="flex items-center justify-center bg-blue-100 md:w-1/2">
               <img
-                src={myImage.src}
+                src={vercelImage}
                 alt="About Us"
                 className="1rounded-lg shadow-lg"
               />

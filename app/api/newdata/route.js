@@ -2,7 +2,8 @@ import { createClient } from "@supabase/supabase-js";
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
-  process.env.NEXT_PUBLIC_SUPABASE_KEY
+  process.env.NEXT_PUBLIC_SUPABASE_KEY,
+  { auth: { persistSession: false } }
 );
 
 export const POST = async (req, res) => {
@@ -39,17 +40,18 @@ export const POST = async (req, res) => {
 
 export const GET = async (req, res) => {
   try {
-    let { data: companyservices, error } = await supabase
+    let { data, error } = await supabase
       .from("companyservices")
       .select("*");
 
     if (error) {
       console.log(error);
     }
+    
 
-    console.log(companyservices);
+    
 
-    return new Response(JSON.stringify(companyservices), {
+    return new Response(JSON.stringify(data), {
       status: 201,
     });
   } catch (error) {

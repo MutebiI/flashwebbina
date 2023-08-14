@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"next dev\" \"nodemon server.js\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -16,16 +16,30 @@
     "@supabase/supabase-js": "^2.24.0",
     "autoprefixer": "10.4.14",
     "body-parser": "^1.20.2",
+    "concurrently": "^8.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "encoding": "^0.1.13",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.2",
+    "express": "^4.18.2",
     "flowbite": "^1.6.5",
+    "formidable": "^3.5.0",
+    "multer": "^1.4.5-lts.1",
     "next": "13.4.2",
+    "next-connect": "^1.0.0",
     "postcss": "8.4.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
     "react-iframe": "^1.8.5",
     "react-responsive-carousel": "^3.2.23",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1",
     "tailwindcss": "3.3.2"
+  },
+  "devDependencies": {
+    "file-loader": "^6.2.0",
+    "nodemon": "^3.0.1"
   }
 }

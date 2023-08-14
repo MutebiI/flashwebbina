@@ -1,17 +1,19 @@
 import React from "react";
-import myImage from "../images/ibra.JPG";
+// import myImage from "../images/ibra.JPG";
 import Column2 from "./Column2.js"
 import Column from "./Column.js"
 // import servicesImage from "../images/servicesImage.JPG";
-import servicesImage from "../images/servicesnew.JPG";
+// import servicesImage from "../images/servicesnew.JPG";
 
 const AboutUs = () => {
+  const vercelImage =
+    "https://media.istockphoto.com/id/1187065202/photo/computer-hacker-breaking-the-codes.jpg?s=612x612&w=0&k=20&c=y8gMrMMpBJ0uniFZKrAMjxEajwHkPyaHbpre44aQETo=";
   return (
     <div>
       <div
         className=" overflow-hidden bg-cover h-full flex flex-col bg-fixed bg-no-repeat"
         style={{
-          backgroundImage: `url(${servicesImage.src})`,
+          backgroundImage: `url(${vercelImage})`,
           width: "100%",
           height: "30vh",
         }}

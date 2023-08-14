@@ -1,0 +1,25 @@
+/* ImageCarousel.css */
+
+@keyframes slide {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animation-slide h1,
+.animation-slide p {
+  animation: slide 3s ease; /* Adjust the duration and easing as desired */
+}
+
+.blur-layer {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity (0 to 1) for desired blur strength */
+  backdrop-filter: blur(1px); /* Adjust blur strength as desired */
+}

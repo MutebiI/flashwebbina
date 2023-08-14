@@ -1,4 +1,4 @@
-export default function () {
+export default function Loading() {
     return (
         <div className="flex items-center justify-center h-screen">Loading...page</div>
     )
