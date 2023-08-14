@@ -1,43 +1,46 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import AuthContext from "../../myContext";
+import AuthContext from "../myContext";
 import { useContext } from "react";
-import logo from "../../images/mueletechLogo.PNG";
+
 export const revalidate = 10;
 const LoginForm = () => {
   const { login, wrongCredentials } = useContext(AuthContext);
+  const vercelImage =
+    "https://blog.hubspot.com/hs-fs/hubfs/parts-url-hero.jpg?width=595&height=400&name=parts-url-hero.jpg";
 
-    useEffect(() => {
-      // Disable navigating back to the previous page
-      window.history.pushState(null, document.title, window.location.href);
-      window.addEventListener("popstate", preventBackNavigation);
+  useEffect(() => {
+    // Disable navigating back to the previous page
+    window.history.pushState(null, document.title, window.location.href);
+    window.addEventListener("popstate", preventBackNavigation);
 
-      return () => {
-        // Enable navigating back to the previous page when leaving the current page
-        window.removeEventListener("popstate", preventBackNavigation);
-      };
-    }, []);
-
-    const preventBackNavigation = () => {
-      window.history.forward();
+    return () => {
+      // Enable navigating back to the previous page when leaving the current page
+      window.removeEventListener("popstate", preventBackNavigation);
     };
-  
+  }, []);
+
+  const preventBackNavigation = () => {
+    window.history.forward();
+  };
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-      login(email, password)
-    
-  
+    login(email, password);
   };
 
   return (
     <div>
       <div className="flex flex-col items-center justify-center h-screen bg-blue-400">
         <div className="w-30 h-30 bg-yellow-400">
-          <img src={logo.src} alt="Logo" width={100} height={100} />
+          <img src={vercelImage} alt="Logo" width={100} height={100} />
         </div>
+        {/* <div className="w-30 h-30 bg-yellow-400">
+          <img src={logo.src} alt="Logo" width={100} height={100} />
+        </div> */}
         <form
           className="lg:w-[500px] md:w-[400px] sm:w-[350px] p-4 border border-gray-300 shadow-md rounded"
           onSubmit={handleSubmit}

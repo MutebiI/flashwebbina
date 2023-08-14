@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import myImage from "../images/ibra.JPG";
+
 
 const Card = () => {
   const [data, setData] = useState([]);

@@ -1,20 +1,30 @@
 import React from "react";
-import myImage from '../images/ibra.JPG'
+
+
 // import servicesImage from "../images/servicesnew.JPG";
-import servicesImage from "../images/servicesnew.JPG"
+// import servicesImage from "../images/servicesnew.JPG"
 import Servicesconti from './Servicesconti.js'
 import Column from "./components/Column.js";
 
 // import First from './components/First.js'
 console.log("himbs")
-console.log(myImage.src)
+
 const ServicesPage = () => {
+  const vercelImage =
+    "https://media.istockphoto.com/id/1187065202/photo/computer-hacker-breaking-the-codes.jpg?s=612x612&w=0&k=20&c=y8gMrMMpBJ0uniFZKrAMjxEajwHkPyaHbpre44aQETo=";
   return (
     <>
-      <div
+      {/* <div
         className=" overflow-hidden bg-cover h-full flex flex-col bg-fixed bg-no-repeat"
         style={{
           backgroundImage: `url(${servicesImage.src})`,
+          width: "100%",
+          height: "30vh",
+        }} */}
+      <div
+        className=" overflow-hidden bg-cover h-full flex flex-col bg-fixed bg-no-repeat"
+        style={{
+          backgroundImage: `url(${vercelImage})`,
           width: "100%",
           height: "30vh",
         }}
@@ -28,7 +38,6 @@ const ServicesPage = () => {
       <Column />
 
       <Servicesconti />
-      
 
       {/* <First /> */}
     </>

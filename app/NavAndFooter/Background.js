@@ -1,6 +1,7 @@
 import React from "react";
 
 function Background() {
+  
   return (
     <div className="w-full overflow:hidden">
       <section className="  w-full  bg-center bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-gray-700 bg-blend-multiply m-0 z-20  ">

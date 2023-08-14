@@ -2,7 +2,8 @@ import { createClient } from "@supabase/supabase-js";
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
-  process.env.NEXT_PUBLIC_SUPABASE_KEY
+  process.env.NEXT_PUBLIC_SUPABASE_KEY,
+  { auth: { persistSession: false } }
 );
 
 export const POST = async (req, res) => {

@@ -77,12 +77,11 @@ const PricingPage = () => {
   return (
     <div className="bg-gray-100 min-h-screen">
       <div className="container mx-auto py-12 px-4">
-        
         <div className="flex justify-center">
           <div className="grid w-80 gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:w-full">
             {sortedData.map((course) => (
               <div
-                key={course.name}
+                key={course.id}
                 className="bg-white rounded-lg shadow-lg p-8 w-full text-center"
               >
                 <img

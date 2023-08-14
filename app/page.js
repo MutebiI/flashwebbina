@@ -1,6 +1,4 @@
-import Image from "next/image";
 
-import { Content } from "./NavAndFooter/Content";
 import Background from "./NavAndFooter/Background";
 
 import First from "./services/components/First.js"
@@ -26,7 +24,7 @@ export default async function Home() {
       <div className="conic"></div> */}
       <About/>
 
-      <Content />
+   
       {/* <Services/> */}
       <First/>
       {/* <Carousel /> */}

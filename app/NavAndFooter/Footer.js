@@ -1,7 +1,12 @@
-import logo from "../images/mueletechLogo.PNG";
+
 import Link from "next/link";
+
+
 function Footer() {
   const year = new Date().getFullYear();
+  const vercelImages =
+    "https://file.mockplus.com/image/2019/10/87d7eaf9-dd88-4b97-8be6-2e03a4b5b115.jpg";
+  
 
   return (
     <div className="bg-blue-950">
@@ -10,7 +15,12 @@ function Footer() {
           <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">
               <Link href="/" className="flex items-center">
-                <img src={logo.src} className="h-8 mr-3" alt="FlowBite Logo" />
+                <img
+                  src={vercelImages}
+                  className="h-8 mr-3"
+                  alt="FlowBite Logo"
+                />
+                {/* <img src={logo.src} className="h-8 mr-3" alt="FlowBite Logo" /> */}
                 <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
                   MueleTech
                 </span>

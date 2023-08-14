@@ -31,7 +31,7 @@ const PrivacyPolicy = () => {
           <li>Communicate with you, including responding to your inquiries</li>
           <li>Send you newsletters or promotional emails</li>
           <li>
-            Analyze and improve our website's performance and functionality
+            Analyze and improve our website performance and functionality
           </li>
           <li>Comply with applicable laws and regulations</li>
         </ul>
