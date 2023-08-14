@@ -53,9 +53,10 @@ export default async function Home() {
       {/* <Cbackground slides={slides} /> */}
       <Background />
 
-      <About />
-
-      <First />
+   
+      {/* <Services/> */}
+      <First/>
+      {/* <Carousel /> */}
     </div>
   );
 }

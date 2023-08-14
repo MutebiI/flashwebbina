@@ -24,7 +24,6 @@ function Navbar() {
     setIsNavOpen(!isNavOpen);
   };
 
-
   return (
     <div className="z-10 background-color: rgb(220 38 38) fixed w-full">
       <nav className="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700 m-0  ">

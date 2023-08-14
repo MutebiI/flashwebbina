@@ -72,6 +72,12 @@ function Data() {
   const sortedData = data.sort(
     (a, b) => new Date(b.created_at) - new Date(a.created_at)
   );
+  // async function deleteItem(id) {
+  //  const supabase = createClient(
+  //    process.env.SUPABASE_URL,
+  //    process.env.NEXT_PUBLIC_SUPABASE_KEY,
+  //    { auth: { persistSession: false } }
+  //  );
 
   async function deleteItem(id) {
     const response = await fetch(`/api/deleteitem?id=${id}`, {

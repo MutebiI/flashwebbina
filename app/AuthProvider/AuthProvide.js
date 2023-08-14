@@ -6,7 +6,6 @@ const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [wrongCredentials, setWrongCredentials] = useState("");
   const [mytoken, setMytoken] = useState(false)
-  const [updatedServerData, setUpdatedServerData] = useState(false)
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -71,14 +70,7 @@ const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{
-        isLoggedIn,
-        login,
-        logout,
-        wrongCredentials,
-        updatedServerData,
-        setUpdatedServerData,
-      }}
+      value={{ isLoggedIn, login, logout, wrongCredentials }}
     >
       {isLoggedIn ? children : <LandingPage1 />}
     </AuthContext.Provider>

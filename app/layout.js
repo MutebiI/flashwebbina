@@ -2,7 +2,6 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Just from "./Just";
-// export const revalidate = false;
 
 const inter = Inter({ subsets: ["latin"] });
 
