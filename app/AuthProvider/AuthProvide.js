@@ -5,6 +5,8 @@ import LandingPage1 from "../controlledForms/LandingPage1.js";
 const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [wrongCredentials, setWrongCredentials] = useState("");
+ 
+  const [updatedServerData, setUpdatedServerData] = useState(false);
   const [mytoken, setMytoken] = useState(false)
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -70,7 +72,14 @@ const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ isLoggedIn, login, logout, wrongCredentials }}
+      value={{
+        isLoggedIn,
+        login,
+        logout,
+        wrongCredentials,
+        updatedServerData,
+        setUpdatedServerData,
+      }}
     >
       {isLoggedIn ? children : <LandingPage1 />}
     </AuthContext.Provider>

@@ -29,21 +29,10 @@ const MyForm = ({ closeModal }) => {
       if (dataz === null) {
         console.log("no data or an error occured ");
       } else {
-        // const supabase = createClient(
-        //   "https://pquqecfuohkgeipmcgkt.supabase.co",
-        //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBxdXFlY2Z1b2hrZ2VpcG1jZ2t0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODU5NTA2MDIsImV4cCI6MjAwMTUyNjYwMn0.aJWq2-mK9HvwRoE9b07XN7GqaNb1f66ICQH0Wv7iT-c"
-        // );
-        console.log("brainiac----");
-        // const { data, error } = await supabase.from("companyservices").insert({
-        //   image,
-        //   title,
-        //   description,
-        //   feature,
-        //   amount,
-        // });
-        // console.log(data);
+       
         
         console.log(dataz);
+        console.log(updatedServerData)
         setImage("");
         setTitle("");
         setDescription("");
@@ -57,37 +46,38 @@ const MyForm = ({ closeModal }) => {
     }
   };
   const handleImageChange = async (e) => {
-    const supabase = createClient(
-      "https://pquqecfuohkgeipmcgkt.supabase.co",
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBxdXFlY2Z1b2hrZ2VpcG1jZ2t0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODU5NTA2MDIsImV4cCI6MjAwMTUyNjYwMn0.aJWq2-mK9HvwRoE9b07XN7GqaNb1f66ICQH0Wv7iT-c",
-      { auth: { persistSession: false } }
-    );
+    e.preventDefault();
     const file = e.target.files[0];
-    // Perform any necessary image processing here
-    //   setImage(file);
-
-      try {
-        const formData = new FormData();
-        formData.append("file", file);
-        formData.append("newFileName", newFileName);
-        const response = await fetch(
-          "http://localhost:3001/api/handleimageedit",
-          {
-            method: "PATCH",
-            body: formData,
-          }
-        );
-        if (!response.ok) {
-          throw new Error("File upload failed.");
-        }
-
-        const dataz = await response.json();
-        console.log(dataz.imageUrl);
-        setImage(dataz.imageUrl);
-      } catch (error) {
-        console.log(error);
-      }
+    const fileExt = file.name.split(".").pop();
+    const newFileName = `${Date.now()}.${fileExt}`;
+    const body = {
+      file: file,
+      newFileName: newFileName,
     };
+
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("newFileName", newFileName);
+      const response = await fetch(
+        "http://localhost:3001/api/handleimageedit",
+        {
+          method: "PATCH",
+          body: formData,
+        }
+      );
+      if (!response.ok) {
+        throw new Error("File upload failed.");
+      }
+
+      const dataz = await response.json();
+      console.log(dataz.imageUrl);
+      setImage(dataz.imageUrl);
+      // setUpdatedServerData(!updatedServerData);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">

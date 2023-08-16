@@ -32,15 +32,34 @@ function Page() {
   
 
   return (
-    <div>
+    <div style={{ position: "relative" }}>
       <Background />
-      <button onClick={handleLogout}>LOG OUT </button>
-      <button
-        onClick={openModal}
-        className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+
+      {/* ... other components */}
+
+      <div
+        style={{
+          position: "fixed",
+          top: "50%",
+          right: 0, // Position on the right side
+          transform: "translateY(-50%)",
+          zIndex: 10, // Adjust the z-index as needed
+        }}
       >
-        Add A New service
-      </button>
+        <button
+          onClick={openModal}
+          className="mb-2 px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          style={{ display: "block" }}
+        >
+          Add A New Services
+        </button>
+        <button
+          onClick={handleLogout}
+          className="px-4 py-2 text-white bg-red-500 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        >
+          LOG OUT
+        </button>
+      </div>
 
       <Activitydata />
 
